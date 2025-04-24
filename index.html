@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSM-5 Anagram Oyunu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f2f2f2;
+      padding: 2rem;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .letters {
+      font-size: 2rem;
+      letter-spacing: 10px;
+      margin-bottom: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DSM-5 Anagram Oyunu</h1>
+    <p>Harfleri kullanarak DSM-5’te yer alan bir bozukluğu bulun:</p>
+    <div class="letters">S E O I L H Z R P D</div>
+    <input type="text" id="answer" placeholder="Cevabınızı yazın" />
+    <br />
+    <button onclick="checkAnswer()">Cevapla</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const correctAnswer = "depresyon";
+
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.toLowerCase().trim();
+      const result = document.getElementById("result");
+      if (input === correctAnswer) {
+        result.textContent = "✅ Doğru! Depresyon.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Yanlış cevap, tekrar deneyin.";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
